@@ -1,0 +1,113 @@
+give a task which includes Map(),filter,find,reduce in Javascript as combined assignment with solution
+Sure! Here’s a combined task that uses map(), filter(), find(), and reduce() in JavaScript. The task will involve processing an array of user orders and generating a summary report.
+
+Task: Process and Summarize Orders
+Given an array of user orders, your task is to:
+
+Filter out orders that are not delivered.
+
+Map the remaining orders to extract necessary details.
+
+Find the order placed by a specific user.
+
+Use reduce() to calculate the total revenue from all delivered orders.
+
+Data Structure:
+Here’s an example array of orders:
+
+javascript
+const orders = [
+  { id: 1, userId: 101, product: 'Laptop', amount: 999, delivered: true },
+  { id: 2, userId: 102, product: 'Phone', amount: 699, delivered: false },
+  { id: 3, userId: 101, product: 'Tablet', amount: 499, delivered: true },
+  { id: 4, userId: 103, product: 'Monitor', amount: 199, delivered: true },
+  { id: 5, userId: 104, product: 'Keyboard', amount: 49, delivered: false },
+  { id: 6, userId: 102, product: 'Mouse', amount: 25, delivered: true },
+];
+Steps:
+Filter out orders that are not delivered.
+
+Map the remaining orders to extract userId and amount.
+
+Find the first order placed by user 102.
+
+Reduce the array to calculate the total revenue from all delivered orders.
+
+Solution:
+javascript
+const orders = [
+  { id: 1, userId: 101, product: 'Laptop', amount: 999, delivered: true },
+  { id: 2, userId: 102, product: 'Phone', amount: 699, delivered: false },
+  { id: 3, userId: 101, product: 'Tablet', amount: 499, delivered: true },
+  { id: 4, userId: 103, product: 'Monitor', amount: 199, delivered: true },
+  { id: 5, userId: 104, product: 'Keyboard', amount: 49, delivered: false },
+  { id: 6, userId: 102, product: 'Mouse', amount: 25, delivered: true },
+];
+
+// 1. Filter out orders that are not delivered
+const deliveredOrders = orders.filter(order => order.delivered);
+
+console.log('Delivered Orders:', deliveredOrders);
+
+// 2. Map the remaining orders to extract userId and amount
+const orderSummaries = deliveredOrders.map(order => ({
+  userId: order.userId,
+  amount: order.amount
+}));
+
+console.log('Order Summaries:', orderSummaries);
+
+// 3. Find the first order placed by user 102
+const user102Order = orders.find(order => order.userId === 102);
+
+console.log('First Order by User 102:', user102Order);
+
+// 4. Reduce the array to calculate the total revenue from all delivered orders
+const totalRevenue = deliveredOrders.reduce((accumulator, order) => {
+  return accumulator + order.amount;
+}, 0);
+
+console.log('Total Revenue:', totalRevenue);
+Explanation:
+Filter:
+
+const deliveredOrders = orders.filter(order => order.delivered);
+
+Filters the orders array to include only orders that are delivered.
+
+Map:
+
+const orderSummaries = deliveredOrders.map(order => ({ userId: order.userId, amount: order.amount }));
+
+Maps the filtered orders to extract the userId and amount properties.
+
+Find:
+
+const user102Order = orders.find(order => order.userId === 102);
+
+Finds the first order in the orders array placed by user with userId 102.
+
+Reduce:
+
+const totalRevenue = deliveredOrders.reduce((accumulator, order) => accumulator + order.amount, 0);
+
+Reduces the filtered array to calculate the total revenue from all delivered orders.
+
+This task combines map(), filter(), find(), and reduce() to demonstrate how these powerful array methods can work together to process and summarize data effectively. Let me know if you have any questions or need further assistance! 😊
+
+for same question you give text format as question
+Certainly! Here’s the same question in a text format suitable for an assignment:
+
+Assignment: Processing and Summarizing Orders using JavaScript Array Methods
+Objective:
+You are provided with an array of user orders. Your task is to process these orders and generate a summary report using JavaScript array methods. Specifically, you need to use map(), filter(), find(), and reduce() methods to perform the following steps:
+
+Given Data:
+const orders = [
+  { id: 1, userId: 101, product: 'Laptop', amount: 999, delivered: true },
+  { id: 2, userId: 102, product: 'Phone', amount: 699, delivered: false },
+  { id: 3, userId: 101, product: 'Tablet', amount: 499, delivered: true },
+  { id: 4, userId: 103, product: 'Monitor', amount: 199, delivered: true },
+  { id: 5, userId: 104, product: 'Keyboard', amount: 49, delivered: false },
+  { id: 6, userId: 102, product: 'Mouse', amount: 25, delivered: true },
+];
