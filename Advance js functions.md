@@ -7,7 +7,7 @@ The map() method creates a new array populated with the results of calling a pro
 
 **Example:**
 
-```javascript
+```js
 const numbers = [1, 2, 3, 4];
 const doubled = numbers.map(number => number * 2);
 console.log(doubled); // [2, 4, 6, 8]
@@ -19,7 +19,7 @@ console.log(doubled); // [2, 4, 6, 8]
 
 **Example**:
 
-```javascript
+```js
 const numbers = [1, 2, 3, 4, 5];
 const evenNumbers = numbers.filter(number => number % 2 === 0);
 console.log(evenNumbers); // [2, 4]
@@ -31,7 +31,7 @@ console.log(evenNumbers); // [2, 4]
 
 **Example:**
 
-```javascript
+```js
 const numbers = [1, 2, 3, 4];
 const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 console.log(sum); // 10
@@ -43,7 +43,7 @@ Destructuring allows you to unpack values from arrays or properties from objects
 
 **Example:**
 
-```javascript
+```js
 const user = {
   name: 'Alice',
   age: 25,
